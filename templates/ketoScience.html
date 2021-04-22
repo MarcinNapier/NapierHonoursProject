@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+
+    <!-- Font special for pages-->
+
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Css Styles -->
+    <link href="{{url_for('static', filename = 'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'elegant-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'nice-select.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'barfiller.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'slicknav.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet">
+
+
+
+     <!-- Icons font CSS-->
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- Font special for pages-->
+
+
+    <!-- Vendor CSS-->
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Main CSS-->
+
+     <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet" media="all">
+
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+
+
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+   
+    <div class="offcanvas-menu">
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+		</div>     
+        <nav class="header__menu">
+            <ul class="mobile-menu">
+                <li><a href="./index.html">About</a></li>
+                <li class="active"<a> href="./ketoScience.html">Keto science</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="./ketoPlan.html">Keto plan</a></li>
+                <li><a href="./books.html">Books</a></li>
+                {% if session['loginSuccess'] == True %}
+                <li><a href="./recommendations.html">Recommendations</a></li>
+                {% endif %}
+                {% if session['loginSuccess'] == True %}
+                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                {% else %}
+                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
+       
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__logo">
+                            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        
+                    </div>
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a href=".">About</a></li>
+                                <li class="active"><a href="./ketoScience.html">Keto science</a></li>
+                                <li><a href="recipes.html">Recipes</a></li>
+                                <li><a href="./ketoPlan.html">Keto plan</a></li>
+                                <li><a href="./books.html">Books</a></li>
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="./recommendations.html">Recommendations</a></li>
+                                {% endif %}
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                                {% else %}
+                                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+
+    <!-- Breadcrumb Begin -->
+    <section class="breadcrumb-option set-bg" data-setbg="static/img/KetoScience/KetoScience.jpg" alt="ThisisEngineering RAEng">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h2>Keto Science</h2>
+                        <div class="breadcrumb__widget">
+                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb End -->
+     <section class="team spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+						<h1>Ketogenic diet benefits</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	 </section>
+    <!-- About Section Begin -->
+    <section class="about spad">
+        <div class="container">
+            <div class="about__services">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="services__item">
+                            <img src="static/img/KetoScience/weightLoss.png" alt="">
+                            <h5>Weight loss and maintenance</h5>
+                            <p>Studies show that low-carb, ketogenic diets are able to achieve strong weight loss over an extended period.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="services__item">
+                            <img src="static/img/KetoScience/bloodPressure.png" alt="">
+                            <h5>High blood pressure control</h5>							
+                            <p>A number of studies have shown that a ketogenic diet can decrease blood pressure levels in people that are overweight or with type 2 diabetes.</p>
+                        </div>
+                    </div>
+                   <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="services__item">
+                            <img src="static/img/KetoScience/glucose1.png" alt="">
+                            <h5>Blood glucose control</h5>
+							<p><br></p>
+                            <p>Studies into ketogenic diets show them to be very effective at reducing HbA1c – a long-term measure of blood glucose control.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="services__item">
+                            <img src="static/img/KetoScience/brain.png" alt="">
+                            <h5>Stronger mental performance</h5>
+                            <p>Mental clarity, an increased ability to focus and a better memory are other commonly reported benefits of eating a ketogenic diet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+					
+    <!-- Team Section Begin -->
+    <section class="team spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <img src="static/img/KetoScience/rightPlace.png" width="150px" alt="">
+                        <h2>You've reached your destination</h2>
+                        <p>If you are on this page, it means that you are looking for a solution to your health problems or you just want to lose weight.</p>
+						<p>You can find below scientific articles about the keto diet.  </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="team__slider owl-carousel">
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="static/img/KetoScience/MarceloCampos1.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Marcelo Campos, MD </h4>
+                                    <span>Contributor</span>
+                                </div>
+                                <p>A ketogenic diet is not something new.<br /> In medicine, we have been using it <br /> for almost 100 years.</p>
+									
+                                <div class="team__item__title">
+                                    <a href="https://www.health.harvard.edu/blog/ketogenic-diet-is-the-ultimate-low-carb-diet-good-for-you-2017072712089" class="sidebar-btn">MORE INFO</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="static/img/KetoScience/HelenCross.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>J. Helen Cross </h4>
+                                    <span>Professsor</span>
+                                </div>
+                                <p>The benefit of the KD is equivalent to any of the new<br />  anticonvulsant medications , emphasizing the need <br />  for more resources to ensure greater diet availability.<br /></p>
+									  
+                                <div class="team__item__title">
+                                    <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1528-1167.2008.01822.x" class="sidebar-btn">MORE INFO</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="team__item">
+                            <div class="team__item__pic">
+                                <img src="static/img/KetoScience/drAtkins.png" alt="">
+                            </div>
+                            <div class="team__item__text">
+                                <div class="team__item__title">
+                                    <h4>Dr. Robert Atkins</h4>
+                                    <span>Yoga Teacher</span>
+                                </div>
+                                <p>You can lose 15 pounds (6.8 kilograms) in the first <br />two weeks of phase 1 and continue to lose weight <br /> in phases 2 and 3...</p>
+								   <div class="team__item__title">
+                                    <a href="https://books.google.pl/books?hl=pl&lr=&id=7NWS2xbfDaoC&oi=fnd&pg=PR7&dq=dr+robert+atkins+keto+diet&ots=lp9-O03COp&sig=cG0edvd2x_ydPLf6SYR1L2GaY7I&redir_esc=y#v=onepage&q&f=false" class="sidebar-btn">MORE INFO</a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section End -->
+
+    <!-- Classes Section Begin -->
+   
+    <!-- Classes Section End -->
+
+   
+
+      <!-- Footer Section Begin -->
+    <section class="footer">
+        <div class="container">
+			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        
+        </div>
+       
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/jquery.barfiller.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>

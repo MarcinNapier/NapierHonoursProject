@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <!-- Font special for pages-->
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Css Styles -->
+    <link href="{{url_for('static', filename = 'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'elegant-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'nice-select.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'barfiller.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'slicknav.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet">
+
+     <!-- Icons font CSS-->
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- Font special for pages-->
+
+    <!-- Vendor CSS-->
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Main CSS-->
+
+     <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet" media="all">
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+
+
+
+</head>
+{%block body%}
+
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+   
+    <div class="offcanvas-menu">
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+		</div>     
+        <nav class="header__menu">
+            <ul class="mobile-menu">
+                <li><a href=".">About</a></li>
+                <li><a href="./ketoScience.html">Keto science</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="./ketoPlan.html">Keto plan</a></li>
+                <li><a href="./books.html">Books</a></li>
+                <li class="active"><a href="./recommendations.html">Recommendations</a></li>
+                
+            </ul>
+        </nav>
+       
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__logo">
+                            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        
+                    </div>
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a href=".">About</a></li>
+                                <li><a href="./ketoScience.html">Keto science</a></li>
+                                <li><a href="recipes.html">Recipes</a></li>
+								<li><a href="./ketoPlan.html">Keto plan</a></li>
+                                <li><a href="./books.html">Books</a></li>
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="./recommendations.html">Recommendations</a></li>
+                                {% endif %}
+                                {% if session['loginSuccess'] == True %}
+                                    <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                                {% else %}
+                                    <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Breadcrumb Begin -->
+    <section class="breadcrumb-option set-bg" data-setbg="static/img/Recommendations/recommendations2.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h2>Recommendations</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb End -->
+
+    <!-- Upcoming Classes Section Begin -->
+    <section class="upcoming-classes spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+
+
+
+                            <h2>Hi {{ users.username }}</h2>
+
+                            <h2> This is the right place to
+                            {% if users.answer2 == 'No' %}  start your keto journey<br><br>
+                                <a href="./ketoScience.html" class="btn btn--radius-2 btn--red">Read about keto science</a>
+                                <a href="./ketoPlan.html" class="btn btn--radius-2 btn--red">See how to start keto diet</a>
+                                {% if users.answer1 == 'Yes' %} <h3>You heard about the keto diet so this is only one step to start.<br>
+                                    Click on the links below to find more info.</h3><br><br>
+
+                                {% endif %}
+                            {% else %} continue your keto journey<br><br>
+                            <a href="./recipes.html" class="btn btn--radius-2 btn--red">See great keto recipes</a>
+                                </h2>
+
+                            {% endif %}
+
+                            {% if users.answer1 == 'Yes' %}
+                            <h2></h2>
+                            {% endif %}
+
+
+                        <br><br>
+
+						<br>
+                        <div class="card-body">
+						<h3>Body mass index (BMI) is a person’s weight in kilograms divided by the square of height in meters.
+                            <br>BMI is an inexpensive and easy screening method for weight category—underweight, healthy weight,
+                            overweight, and obesity.</h3></div>
+                </div>
+            </div>
+        </div>
+		</div>
+		<div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+
+
+                        <section class="appointment">
+        <div class="page-wrapper bg-gra-04 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 style="color:white"; class="title1">BMI Calculator</h2>
+                </div>
+                <div class="card-body">
+
+                    <form action="/recommendations" method="POST">
+                        <div class="form-row">
+                            <div class="name">Enter you height in cm</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id= "height" name="height" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Enter you weight in kg</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id= "weight" name="weight" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Enter your age</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" id="age" name="age" required>
+                                </div>
+                            </div>
+                        </div>
+						<div class="form-row">
+                            <div class="name"></div>
+                            <div class="value">
+
+                                        <select name="male" required>
+                                            <option disabled="disabled" selected="selected" value="">Choose your male</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                            </div>
+                        </div>
+						 <div class="section-title">
+                            <button class="btn btn--radius-2 btn--red" id="submit" type="submit">Calculate</button>
+                        </div>
+							
+                        <div class="form-row">
+
+
+                          {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
+                              <div class="title">
+                                  <H2>{{ message }}</H2>
+                              </div>
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                        </div>
+
+                            {{ result.result }}
+                            
+                        </form></div>
+                     
+                        
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- Jquery JS-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="static/vendor/select2/select2.min.js"></script>
+    <script src="static/vendor/datepicker/moment.min.js"></script>
+    <script src="static/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="static/js/global.js"></script>
+
+
+			
+			</section>
+                    </div>
+
+                </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Classes Section End -->
+
+ <!-- Footer Section Begin -->
+    <section class="footer">
+        <div class="container">
+			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This 
+			template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        
+        </div>
+       
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/jquery.barfiller.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+{% endblock %}
+</html>

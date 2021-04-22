@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Css Styles -->
+    <link href="{{url_for('static', filename = 'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'elegant-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'nice-select.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'barfiller.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'slicknav.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet">
+
+     <!-- Icons font CSS-->
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- Font special for pages-->
+
+
+    <!-- Vendor CSS-->
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Main CSS-->
+
+     <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet" media="all">
+
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+
+
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+   
+    <div class="offcanvas-menu">
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+		</div>     
+        <nav class="header__menu">
+            <ul class="mobile-menu">
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./ketoScience.html">Keto science</a></li>
+                <li class="active"><a href="recipes.html">Recipes</a></li>
+                <li><a href="./ketoPlan.html">Keto plan</a></li>
+                <li class="active"><a href="./books.html">Books</a></li>
+                {% if session['loginSuccess'] == True %}
+                <li><a href="./recommendations.html">Recommendations</a></li>
+                {% endif %}
+                {% if session['loginSuccess'] == True %}
+                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                {% else %}
+                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
+       
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__logo">
+                            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        
+                    </div>
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a href=".">About</a></li>
+                                <li><a href="./ketoScience.html">Keto science</a></li>
+                                <li class="active"><a href="recipes.html">Recipes</a></li>
+								<li><a href="./ketoPlan.html">Keto plan</a></li>
+                                <li><a href="./books.html">Books</a></li>
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="./recommendations.html">Recommendations</a></li>
+                                {% endif %}
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                                {% else %}
+                                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+    <!-- Breadcrumb Begin -->
+    <section class="breadcrumb-option set-bg" data-setbg="static/img/Recipes/ketoDishes5a.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h2>Keto recipes</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb End -->
+
+   
+    <!-- Upcoming Classes Section Begin -->
+    <section class="upcoming-classes top-classes spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+                        <h2>Best keto recipes</h2>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/ketoRolls.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>Replace your normal bread with a </br> ketogenic one.</p>
+                            <h4>Keto Rolls</h4>
+                            <h6>3 eggs </h6>
+							<h6>200g of almond flour</h6>
+							<h6>70g plantain ovoid</h6>	
+							<h6>tee spoon of baking powder</h6>
+							<h6>Tbsps of baking powder</h6>
+							<h6>half of the Tbsps apple vinegar</h6>
+							<h6>375ml of boiling water</h6>
+							<h6>salt</h6>
+                            <a href="https://www.youtube.com/watch?v=RaAp_nQucE4&list=PLGpolUlxkHLPWXqPgAZRz8kdLKHTdayee&index=2" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/royalOmelette.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>A small change can turn your omelette </br> into a royal one.</p>
+                            <h4>Royal omelette</h4>
+                            <h6>4 eggs </h6>
+							<h6>60g of mozarella cheese</h6>
+							<h6>100g of thick cream</h6>	
+							<h6>140g of avocado</h6>
+							<h6>30g of clarified butter</h6>
+							<h6>10 small cherry tomatoes</h6>
+							<h6>chieve, herbes of provence</h6>
+							<h6>salt, pepper</h6>
+                            <a href="https://www.youtube.com/watch?v=JjJSVfGdLRg&list=PLGpolUlxkHLPWXqPgAZRz8kdLKHTdayee&index=29" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/ketoPizza.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>You won't feel the difference between a standard pizza.</p>
+                            <h4>Keto Pizza</h4>
+                            <h6>½ Cups (168g) Kirkland's Blanched Almond Flour</h6>
+							<h6>2 Tbsps (15g) Coconut Flour</h6>
+							<h6>⅔ Scoop (20g) Unflavored Whey Protein Powder</h6>	
+							<h6>½ Cup (125g) No Sugar Added Pizza Sauce</h6>
+							<h6>½ Tsp Xanthan Gum</h6>
+							<h6>½ Tsp Baking Powder</h6>
+							<h6>Pinch of Salt</h6>
+							<h6>½Tiny Pinch of Garlic Powder</h6>
+							<h6>Tiny Pinch of Onion Powder</h6>
+							<h6>2 Eggs</h6>
+							<h6>1 Tbsp (14g) Melted Coconut Oil</h6>
+							
+							
+                            <a href="https://www.youtube.com/watch?v=TbYx-ps3qQo&t=232s" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/ketoChickenSoup.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>THE BEST low carb chicken soup</br> recipe  for keto.</p>
+                            <h4>Keto Chicken Noodle Soup</h4>
+                            <h6>2 Tablespoons olive oil</h6>
+							<h6>1 Cup carrots</h6>
+							<h6>1 Cup celery</h6>
+							<h6>⅔ Cup yellow onion</h6>
+							<h6>2 Garlic cloves</h6>
+							<h6>64 oz. chicken broth</h6>
+							<h6>2 Bay leaves</h6>
+							<h6>1 Teaspoon dried thyme</h6>
+							<h6>½ Teaspoon dried oregano</h6>
+							<h6>16 oz. Shirataki fettuccine noodles</h6>
+							<h6>2 Cups shredded chicken</h6>
+							<h6>Salt and pepper to taste </h6>
+							
+                            <a href="https://www.youtube.com/watch?v=ORRldfYTSaQ&list=PLFPiHv9IQfU7IgyrFlw-rx4YVjLfBMFbi" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/ketoCheeseburger.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>Low Carb Keto Dinner.LESS THAN 30 MINUTES from start-to finish to make!</p>
+                            <h4>Keto Cheeseburger Casserole</a></h4>
+                            <h6>2 cloves of garlic </h6>
+							<h6>1 medium onion</h6>
+							<h6>280g cheddar cheese</h6>	
+							<h6>56g of mayonnaise</h6>
+							<h6>56g of reduced sugar ketchup</h6>
+							<h6>Tbsps of olive oil</h6>
+							<h6>820g ground beef</h6>
+							<h6>salt, pepper</h6>
+                            <a href="https://www.youtube.com/watch?v=toT9veLu2EE&list=PLFPiHv9IQfU6tvbTVB4ftqwFTH-dtKXt_" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-lg-4 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/Recipes/ketoLunch.png">
+                            
+                        </div>
+                        <div class="classes__item__text">
+                            <p>Delicious and easy low carb lunch. </br> Each cup has UNDER 2 GRAMS NET CARBS!</p>
+                            <h4>Keto Tuna Salad</h4>
+                            <h6>2 Tablespoons olive oil</h6>
+							<h6>1 Cup carrots</h6>
+							<h6>1 Cup celery</h6>
+							<h6>⅔ Cup yellow onion</h6>
+							<h6>2 Garlic cloves</h6>
+							<h6>64 oz. chicken broth</h6>
+							<h6>2 Bay leaves</h6>
+							<h6>1 Teaspoon dried thyme</h6>
+							<h6>½ Teaspoon dried oregano</h6>
+							<h6>16 oz. Shirataki fettuccine noodles</h6>
+							<h6>2 Cups shredded chicken</h6>
+							<h6>Salt and pepper to taste</h6>
+                            <a href="https://www.youtube.com/watch?v=CPdRUYA12p8&list=PLFPiHv9IQfU6TuA29qWn4slkl4FJroFcr" class="class-btn">Video</a>
+                        </div>
+                    </div>
+                </div>
+				
+				
+            </div>
+        </div>
+		
+    </section>
+    <!-- Upcoming Classes Section End -->
+
+    <!-- Footer Section Begin -->
+    <section class="footer">
+        <div class="container">
+			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        
+        </div>
+       
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/jquery.barfiller.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <!-- Font special for pages-->
+
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Directing Template">
+    <meta name="keywords" content="Directing, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Css Styles -->
+    <link href="{{url_for('static', filename = 'bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'elegant-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'nice-select.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'barfiller.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'slicknav.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet">
+
+     <!-- Icons font CSS-->
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+
+    <link href="{{url_for('static', filename = 'vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- Font special for pages-->
+
+
+    <!-- Vendor CSS-->
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <link href="{{url_for('static', filename = 'vendor/select2/select2.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename = 'vendor/datepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Main CSS-->
+
+     <link href="{{url_for('static', filename = 'main.css')}}" rel="stylesheet" media="all">
+
+
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" />
+
+
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+   
+    <div class="offcanvas-menu">
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+		</div>     
+        <nav class="header__menu">
+            <ul class="mobile-menu">
+                <li><a href="./index.html">About</a></li>
+                <li><a href="./ketoScience.html">Keto science</a></li>
+                <li><a href="./recipes.html">Recipes</a></li>
+                <li class="active"><a href="./ketoPlan.html">Keto plan</a></li>
+                <li><a href="./books.html">Books</a></li>
+                {% if session['loginSuccess'] == True %}
+                <li><a href="./recommendations.html">Recommendations</a></li>
+                {% endif %}
+                {% if session['loginSuccess'] == True %}
+                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                {% else %}
+                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                {% endif %}
+                
+            </ul>
+        </nav>
+       
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <div class="header__logo">
+                            <a href="./index.html"><img src="static/img/logo1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        
+                    </div>
+                </div>
+                <div class="canvas__open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="header__nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a href=".">About</a></li>
+                                <li><a href="./ketoScience.html">Keto science</a></li>
+                                <li><a href="recipes.html">Recipes</a></li>
+								<li class="active"><a href="./ketoPlan.html">Keto plan</a></li>
+                                <li><a href="./books.html">Books</a></li>
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="./recommendations.html">Recommendations</a></li>
+                                {% endif %}
+                                {% if session['loginSuccess'] == True %}
+                                <li><a href="/logout">Logout <span class="sr-only">(current)</span></a></li>
+                                {% else %}
+                                <li><a href="/login">Login <span class="sr-only">(current)</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+    <!-- Breadcrumb Begin -->
+    <section class="breadcrumb-option set-bg" data-setbg="static/img/KetoPlan/dietPlan1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__text">
+                        <h2>Keto Plan</h2>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb End -->
+
+
+
+    <!-- Upcoming Classes Section Begin -->
+    <section class="upcoming-classes spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+                        <h2>Read carefully!</h2>
+                        <h4>Often, a forgotten preparatory step is to take a blood test and measure your blood pressure. 
+						This is important for two reasons. Some of the results you may need to consult with your doctor 
+						and the second reason is that after a few months you will have a starting point to compare what 
+                            has changed. </h4></br></br>
+						</br>
+						<h4>To enter ketosis, you normally eat no more than 50 — and as few as 20 — grams of carbs per 
+						day for about 30 days.Fat adaptation may start any time between 4 and 12 weeks after you enter 
+						ketosis, depending on the individual and how strictly you adhere to the keto diet. Notably, endurance 
+						athletes may adapt even sooner.</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/KetoPlan/water.jpg">
+                            <span>Keto adaptation</span>
+                        </div>
+							<div class="classes__item__text1">
+							</br>
+								<p>What you need to know before you start.</p>
+								</br>
+								<strong><h2> Important steps to follow in </br>adapting to ketosis.</h2></strong></br></br>
+								<div class="classes__item__text">
+								<strong><h3>Eat lots of fat and fiber</h3></strong></br>
+								<h4>The fuller you feel, the less likely you are to miss your favorite carb-laden foods. 
+								Foods made with flaxseeds, for example, are high in both fiber and healthy omega-3 fats.</h4>
+								<strong><h3>Increase salt and water intake</h3></strong></br>
+								<h4>Many of the negative side effects are caused by a loss of fluid and electrolytes like 
+								sodium (carbs hold on to water, so you'll probably urinate a lot more once you cut them out). 
+								To replenish both, drink a cup of water with a half teaspoon of salt stirred into it or a cup 
+								of bouillon broth several times a day for a few days.</h4>
+								<strong><h3>Go easy with physical activity</h3></strong></br>
+								<h4>As you adapt to a new fuel source, strenuous workouts can further stress your body, so 
+								stick to gentle forms of exercise like walking and stretching for a few weeks.</h4>
+								<strong><h3>Avoid eating carbohydrates</h3></strong></br>
+								<h4>The most common reason for not getting into ketosis is not cutting back enough on carbs. 
+								Restricting carbs keeps blood sugar and insulin levels low
+								Low insulin signals your liver to start burning fat and making ketones</h4>
+								<h4></h4>
+								<a href="https://www.almondtozest.com/keto-meal-plan/" class="class-btn">Keto Plan for 30 days</a>
+							</div>
+						</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="classes__item">
+                        <div class="classes__item__pic set-bg" data-setbg="static/img/KetoPlan/adopted.jpg">
+                            <span>Keto adapted</span>
+                        </div>
+                        <div class="classes__item__text1">
+						</br>
+								<p>What you need to know before you start.</p>
+								</br>
+								<strong><h2> So you are in... What now?</h2></strong></br>
+								<h4></h4>
+								<div class="classes__item__text">
+								<strong><h3>Blood tests</h3></strong></br>
+								<h4>As you entered ketosis, your body began to dra	w from its fat stores and dietary 
+								fat to convert fatty acids into ketone bodies for energy. Now is a good time to get a blood test. This way you can monitor your progress and check your ketone levels this time. The ketone level indicating ketosis starts at 0.5 mmol / l. “Fat adapted” means that your body has reached a state in which it more effectively burns fat for energy.</h4>
+								<strong><h3>Remember about salt and water intake</h3></strong></br>
+								<h4>Dehydration is an increased possibility on keto. “The drastic decrease in carbohydrate 
+								intake on the ketogenic diet can cause shifts in your fluid and electrolyte balance. </h4>
+								<strong><h3>You can make more exercise now.</h3></strong></br>
+								<h4>Add exercise and keto into your lifestyle to improve your health, then you have more 
+								room to experiment with what is best for you.</h4>
+								<strong><h3>Remember to get enough sleep</h3></strong></br>
+								<h4>Lack of sleep has been shown to increase sugar cravings and stress levels, which directly 
+								affect ketone production.	</h4>
+								<a href="https://www.almondtozest.com/keto-meal-plan/" class="class-btn">Keto Plan for 30 days</a>
+							</div>
+						</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+		
+		<div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title normal-title">
+					
+					<section class="appointment">
+
+
+    <!-- Jquery JS-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="static/vendor/select2/select2.min.js"></script>
+    <script src="static/vendor/datepicker/moment.min.js"></script>
+    <script src="static/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="static/js/global.js"></script>
+    </section>
+			
+					</div>
+					</div></div>
+    </section>
+    <!-- Upcoming Classes Section End -->
+
+ <!-- Footer Section Begin -->
+    <section class="footer">
+        <div class="container">
+			<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This 
+			template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        
+        </div>
+       
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.nice-select.min.js"></script>
+    <script src="static/js/jquery.barfiller.js"></script>
+    <script src="static/js/jquery.slicknav.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>

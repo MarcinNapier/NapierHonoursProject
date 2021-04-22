@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: POT
+Version: 0.7.0
+Summary: Python Optimal Transport Library
+Home-page: https://github.com/PythonOT/POT
+Author: Remi Flamary, Nicolas Courty
+Author-email: remi.flamary@gmail.com, ncourty@gmail.com
+License: MIT
+Download-URL: https://github.com/PythonOT/POT/archive/0.7.0.tar.gz
+Requires-Dist: numpy (>=1.16)
+Requires-Dist: scipy (>=1.0)
+Requires-Dist: cython (>=0.23)
+
+# POT: Python Optimal Transport
+
+
