@@ -1,28 +1,24 @@
-
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import MySQLdb
-import os
-
+import mysql.connector as db
+import sqlalchemy
 from flask_mysqldb import MySQL
-
-from sqlalchemy import create_engine
-
+from sqlalchemy import create_engine, false
 from sqlalchemy.testing import db
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 
-# configs to the server
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'honours_napier'  # change database
+app.config["DEBUG"] = True
+
+
 app.config['SESSION_TYPE'] = 'filesystem'
+app.secret_key = 'super secret key'
+conn = MySQLdb.connect(host="keepintouch24.mysql.pythonanywhere-services.com", user = "keepintouch24", passwd = "C0!!ege2014", db = "keepintouch24$napier_honours")
+cursor = conn.cursor()
 
-engine = create_engine('sqlite:///tutorial.db', echo=True)  # database
-
-db = MySQL(app)
-
+engine = sqlalchemy.create_engine('mysql+mysqlconnector://keepintouch24:C0!!ege2014@keepintouch24.mysql.pythonanywhere-services.com/keepintouch24$napier_honours')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login_form(result=None):
@@ -30,12 +26,12 @@ def login_form(result=None):
         if 'username' in request.form and 'password' in request.form:
             username = request.form['username']
             password = request.form['password']
-            cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor = conn.cursor()
             cursor.execute("""SELECT * FROM users WHERE username = %s AND password = %s""", (username, password))
             info = cursor.fetchone()
 
             if info is not None:
-                if info['username'] == username and info['password'] == password:
+                if info[1] == username and info[2] == password:
                     session['loginSuccess'] = True
                     session['username'] = username
                     session['info'] = info
@@ -54,7 +50,7 @@ def register_user():
             username = request.form['username']
             password = request.form['password']
 
-            cursor = db.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor = conn.cursor()
             cursor.execute("""SELECT * FROM users WHERE username = %s AND password = %s""", (username, password))
             info1 = cursor.fetchone()
             if info1 is not None:
@@ -70,10 +66,9 @@ def register_user():
                 flash('Passwords do not matches. Please try again.')
                 return render_template('register.html')
             else:
-                cur = db.connection.cursor(MySQLdb.cursors.DictCursor)
+                cur = conn.cursor()
                 cur.execute("INSERT INTO users(username,password, answer1, answer2)VALUES(%s, %s, %s, %s)",
                             (username, password, answer1, answer2))
-                db.connection.commit()
                 return render_template('login.html')
 
     return render_template('register.html')
@@ -173,6 +168,6 @@ def logout():
     return render_template('index.html')
 
 
-if __name__ == "__main__":
-    app.secret_key = os.urandom(12)
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run()
+
